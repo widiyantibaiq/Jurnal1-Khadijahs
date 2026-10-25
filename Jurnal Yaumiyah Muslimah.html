@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jurnal Yaumiyah Muslimah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri&family=Figtree:wght@400;600&family=Fraunces:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F4F0F7;--card:#fff;--ink:#2B1F3A;--mut:#6F6480;--ac:#2F7F73;--onac:#fff;--rose:#C65A7C;--roses:#F8E3EA;--line:#E3DCEA;--gold:#A87A2A;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17121E;--card:#221B2C;--ink:#F0EAF6;--mut:#A89CB8;--ac:#5CC4B3;--onac:#10231F;--rose:#E58AA6;--roses:#3A2230;--line:#352C42;--gold:#D9AE5F;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#17121E;--card:#221B2C;--ink:#F0EAF6;--mut:#A89CB8;--ac:#5CC4B3;--onac:#10231F;--rose:#E58AA6;--roses:#3A2230;--line:#352C42;--gold:#D9AE5F;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Figtree,system-ui,sans-serif;padding-bottom:84px}
+#app{max-width:600px;margin:0 auto;padding:0 16px}
+:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+header{text-align:center;padding:20px 0 8px}
+.bis{font:30px/1.6 Amiri,serif;color:var(--gold)}
+h1{font:600 26px/1.2 Fraunces,Georgia,serif;margin:2px 0 4px}
+.sub{color:var(--mut);font-size:14px;margin:0}
+.strip{position:relative;display:flex;gap:6px;overflow-x:auto;padding:12px 0 10px;scrollbar-width:none}
+.strip::-webkit-scrollbar{display:none}
+.dc{flex:none;width:46px;padding:6px 0;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);display:flex;flex-direction:column;align-items:center;gap:1px;font:inherit;cursor:pointer}
+.dc small{font-size:11px;color:var(--mut)}
+.dc b{font:600 17px Fraunces,serif}
+.dc i{width:6px;height:6px;border-radius:50%}
+.dc i.p{background:var(--gold)}
+.dc i.f{background:var(--ac)}
+.dc.td:not(.on){border-color:var(--ac)}
+.dc.on{background:var(--ac);border-color:var(--ac);color:var(--onac)}
+.dc.on small{color:inherit}
+.dc.on i.p,.dc.on i.f{background:var(--onac)}
+.dt{text-align:center;margin:2px 0 12px}
+.dt b{display:block;font:600 18px Fraunces,serif}
+.dt span{color:var(--mut);font-size:13px}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:2px 16px 12px;margin:14px 0}
+h2{font:600 18px/1.3 Fraunces,Georgia,serif;margin:14px 0 8px;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+h2 small{font:600 14px Figtree,sans-serif;color:var(--mut)}
+.pb{height:8px;border-radius:99px;background:var(--bg);overflow:hidden;margin:2px 0 8px}
+.pb div{height:100%;background:var(--ac)}
+.row{display:flex;align-items:center;gap:12px;width:100%;min-height:50px;padding:12px 0;background:none;border:0;border-top:1px solid var(--line);font:inherit;color:inherit;text-align:left;cursor:pointer}
+.row i{flex:none;width:24px;height:24px;border-radius:50%;border:2px solid var(--mut)}
+.row.on i{background:var(--ac);border-color:var(--ac)}
+.row.on i::after{content:"✓";display:block;color:var(--onac);text-align:center;font:700 15px/20px Figtree,sans-serif}
+.row.on>span:last-of-type{color:var(--ac);font-weight:600}
+.row .ic{flex:none;width:24px;text-align:center}
+.row em{margin-left:auto;color:var(--rose);font-style:normal;font-size:13px}
+.row.uz i{border-color:var(--rose);opacity:.5}
+.row.hd.on i{background:var(--rose);border-color:var(--rose)}
+.row.hd.on>span:last-of-type{color:var(--rose)}
+.row:disabled{cursor:default}
+.note{background:var(--roses);border-radius:12px;padding:10px 14px;margin:10px 0 2px;font-size:14px}
+label{display:block;font-size:14px;color:var(--mut);margin:10px 0 2px}
+textarea,input,select{display:block;width:100%;margin:6px 0;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);font:inherit}
+textarea{resize:vertical;line-height:1.5}
+.big{display:block;width:100%;padding:14px;margin:14px 0 4px;border:0;border-radius:14px;background:var(--ac);color:var(--onac);font:600 16px Figtree,sans-serif;cursor:pointer}
+.gw{overflow-x:auto;margin:0 -16px;padding:0 16px 6px}
+table{border-collapse:separate;border-spacing:0}
+td,th{padding:2px;text-align:center;font-weight:400}
+.lb{position:sticky;left:0;z-index:1;background:var(--card);min-width:124px;max-width:124px;padding:4px 8px 4px 0;text-align:left;font-size:13px;line-height:1.25}
+.gh{width:26px;height:26px;background:none;border:0;color:var(--mut);font:12px Figtree,sans-serif;cursor:pointer;padding:0}
+.gh.td{color:var(--ac);font-weight:700}
+.gc{width:26px;height:26px;border-radius:7px;border:1px solid var(--line);background:var(--bg);cursor:pointer;padding:0;display:block}
+.gc.on{background:var(--ac);border-color:var(--ac)}
+.gc.hd.on{background:var(--rose);border-color:var(--rose)}
+.gc.uz{background:var(--roses);opacity:.45}
+.sm{padding-left:10px;font-weight:600;text-align:right;white-space:nowrap;font-size:13px}
+.kv{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:6px 0}
+.kv div{background:var(--bg);border-radius:12px;padding:12px}
+.kv b{display:block;font:600 28px/1.1 Fraunces,serif}
+.kv span{font-size:13px;color:var(--mut)}
+.foot{text-align:center;color:var(--mut);font-size:13px;margin:20px 0}
+nav{position:fixed;left:0;right:0;bottom:0;display:flex;background:var(--card);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+nav button{flex:1;padding:15px 0 13px;background:none;border:0;color:var(--mut);font:600 14px Figtree,sans-serif;cursor:pointer}
+nav button.on{color:var(--ac);box-shadow:inset 0 3px 0 var(--ac)}
+nav button{font-size:12.5px}
+.tree{display:block;width:100%;max-width:340px;margin:0 auto}
+.cap{text-align:center;color:var(--mut);font-size:14px;margin:0}
+.sw{display:flex;gap:10px;margin:8px 0}
+.sw button{width:38px;height:38px;border-radius:50%;border:3px solid var(--card);box-shadow:0 0 0 1px var(--line);cursor:pointer}
+.sw button.on{box-shadow:0 0 0 2px var(--ink)}
+.gd{display:flex;flex-wrap:wrap;gap:6px}
+.gd div{width:40px;text-align:center;font-size:22px;line-height:1.2}
+.gd small{display:block;font-size:11px;color:var(--mut)}
+.ev{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 0;border-top:1px solid var(--line);font-size:15px}
+.tgi{display:inline-block;width:64px;margin:0 0 0 4px;padding:8px}
+.mini{padding:8px 14px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;cursor:pointer}
+.mini.s0{border-color:var(--gold)}
+.mini.s1{border-color:var(--ac);color:var(--ac)}
+.mini.s2{border-color:var(--rose);color:var(--rose)}
+.hfs{display:flex;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--line)}
+.hfs span{flex:1}
+.alt{background:var(--bg);color:var(--ink);border:1px solid var(--line)}
+@media print{nav,.noprint,.strip,header .bis{display:none}body{padding:0;background:#fff}.gw{overflow:visible}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<nav aria-label="Menu">
+<button data-a="tab" data-v="day">Harian</button>
+<button data-a="tab" data-v="grid">Sebulan</button>
+<button data-a="tab" data-v="hf">Hafalan</button>
+<button data-a="tab" data-v="ev">Evaluasi</button>
+<button data-a="tab" data-v="set">Atur</button>
+</nav>
+<script>
+const $=s=>document.querySelector(s);
+const pad=n=>String(n).padStart(2,'0');
+const key=d=>d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
+const fromKey=k=>{const[a,b,c]=k.split('-').map(Number);return new Date(a,b-1,c)};
+const today=key(new Date());
+let S={start:today,len:30,days:{}};
+try{const r=localStorage.getItem('jm2');if(r)S=Object.assign(S,JSON.parse(r))}catch(e){}
+const save=()=>{try{localStorage.setItem('jm2',JSON.stringify(S))}catch(e){}};
+const D=k=>S.days[k]||{};
+const W=k=>S.days[k]||(S.days[k]={});
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const keys=()=>{const a=[],d=fromKey(S.start);for(let i=0;i<S.len;i++){a.push(key(d));d.setDate(d.getDate()+1)}return a};
+const IT=[['zp','Dzikir Pagi','🌞'],['zs','Dzikir Petang','🌛'],['tl','Tilawah / Murottal Qur’an','💖'],['mj','Muraja’ah','🌸'],['th','Tahajud','🌛',1],['dh','Dhuha','💸',1],['tf','Tahfidz','💐'],['kh','Al Kahfi time (Jumat)','⛰️'],['sd','Sedekah','🌧️'],['ps','Puasa Sunnah (bonus)','🍃',1,1],['bb','Membaca Buku','📖'],['ns','Nyimak Sharing Time','⌚'],['sy','Bersyukur','🤍'],['or','Olahraga / Jalan / Lari','🏇']];
+const HD=['hd','Sedang Haid Min','🥲'];
+const TX=[['mu','Muhasabah dan afirmasi (doa)','Apa yang sudah baik hari ini, dan apa yang ingin diperbaiki? Tulis afirmasi dan doamu.'],['hf','Catatan hafalan dan muraja’ah Qur’an','Surah dan ayat yang dihafal atau diulang, bagian yang masih sering lupa.'],['in','Insight kajian / baca buku / dll','Ilmu yang kamu dapat hari ini.'],['hk','Hikmah hari ini','Pelajaran yang kamu petik hari ini.'],['ms','Catatan untuk masa depan','Pesan untuk dirimu di masa depan.']];
+let tab='day',cur=keys().includes(today)?today:keys()[0];
+const hijri=d=>{try{return new Intl.DateTimeFormat('id-u-ca-islamic-umalqura',{day:'numeric',month:'long',year:'numeric'}).format(d)}catch(e){return''}};
+const fmt=k=>fromKey(k).toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'});
+const isFri=k=>fromKey(k).getDay()===5;
+const uzf=(x,k,c)=>(c.hd&&x[3])||(x[0]==='kh'&&!isFri(k));
+function prog(k){const c=D(k).c||{},L=IT.filter(x=>!x[4]&&!uzf(x,k,c));return[L.filter(x=>c[x[0]]).length,L.length]}
+
+function row(id,n,e,uz,c,h,cls){
+  const on=c[id],dis=h&&uz;
+  return `<button class="row${cls||''}${on&&!dis?' on':''}${dis?' uz':''}" data-a="tg" data-k="${id}" aria-pressed="${!!on}" ${dis?'disabled':''}><i></i><span class="ic" aria-hidden="true">${e}</span><span>${n}</span>${dis?'<em>uzur</em>':''}</button>`;
+}
+
+function vDay(){
+  const K=keys(),i=K.indexOf(cur),d=D(cur),c=d.c||{},t=d.t||{},h=!!c.hd,[a,b]=prog(cur),dt=fromKey(cur);
+  const strip=K.map((k,j)=>{const p=prog(k),f=p[1]&&p[0]===p[1];return `<button class="dc${k===cur?' on':''}${k===today?' td':''}" data-a="go" data-v="${k}" aria-label="Hari ke-${j+1}, ${fmt(k)}"><small>${fromKey(k).toLocaleDateString('id-ID',{weekday:'short'})}</small><b>${fromKey(k).getDate()}</b><i class="${f?'f':p[0]?'p':''}"></i></button>`}).join('');
+  return `<div class="strip">${strip}</div>
+  <div class="dt"><b>${dt.toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}</b><span>Hari ke-${i+1} dari ${K.length} · ${hijri(dt)}</span></div>
+  <section><h2>Pohon amalan <small>${stage(b?a/b:0)}</small></h2>${tree(b?a/b:0)}<p class="cap">${a} dari ${b} amalan wajib hari ini</p></section>
+  <section><h2>Amalan yaumiyah <small>${a} dari ${b}</small></h2><div class="pb"><div style="width:${b?a/b*100:0}%"></div></div>
+  ${IT.filter(x=>x[0]!=='kh'||isFri(cur)).map(x=>row(x[0],x[1],x[2],x[3],c,h)).join('')}${row(HD[0],HD[1],HD[2],0,c,h,' hd')}
+  ${h?'<p class="note">Hari ini haid, jadi tahajud dan dhuha ditandai uzur dan tidak dihitung.</p>':''}</section>
+  ${TX.map(x=>`<section><h2>${x[1]}</h2><textarea data-f="t:${x[0]}" rows="4" placeholder="${x[2]}" aria-label="${x[1]}">${esc(t[x[0]]||'')}</textarea></section>`).join('')}`;
+}
+
+function vGrid(){
+  const K=keys(),all=IT.concat([HD]);
+  const th=`<tr><th class="lb"></th>${K.map(k=>`<th><button class="gh${k===today?' td':''}" data-a="goday" data-v="${k}" aria-label="Buka ${fmt(k)}">${fromKey(k).getDate()}</button></th>`).join('')}<th class="sm">Jml</th></tr>`;
+  const tr=all.map(x=>{
+    let n=0;
+    const cells=K.map(k=>{const c=D(k).c||{},uz=uzf(x,k,c),on=c[x[0]]&&!uz;if(on)n++;
+      return `<td><button class="gc${x[0]==='hd'?' hd':''}${on?' on':''}${uz?' uz':''}" data-a="gc" data-d="${k}" data-k="${x[0]}" aria-pressed="${!!on}" aria-label="${x[1]} ${fmt(k)}" ${uz?'disabled':''}></button></td>`}).join('');
+    return `<tr><th class="lb" scope="row">${x[2]} ${x[1]}</th>${cells}<td class="sm">${n}</td></tr>`}).join('');
+  const el=K.filter(k=>k<=today);let sum=0,full=0,fil=0;
+  el.forEach(k=>{const[a,b]=prog(k);if(b)sum+=a/b;if(b&&a===b)full++;if(a>0)fil++});
+  const hd=K.filter(k=>(D(k).c||{}).hd).length;
+  return `<section><h2>Sebulan penuh <small>${fmt(K[0])} sampai ${fmt(K[K.length-1])}</small></h2><div class="gw"><table>${th}${tr}</table></div><button class="mini noprint" data-a="pr">Cetak / simpan PDF</button></section>
+  <section><h2>Ringkasan</h2><div class="kv"><div><b>${el.length?Math.round(sum/el.length*100):0}%</b><span>rata-rata amalan terpenuhi</span></div><div><b>${fil}</b><span>hari terisi dari ${el.length} hari berjalan</span></div><div><b>${full}</b><span>hari amalan lengkap</span></div><div><b>${hd}</b><span>hari haid</span></div></div></section>`;
+}
+
+function vSet(){
+  const K=keys();
+  return `<section><h2>Atur bulan jurnal</h2>
+  <label for="st">Mulai tanggal</label><input id="st" type="date" data-f="start" value="${S.start}">
+  <label for="ln">Lama jurnal</label><select id="ln" data-f="len">${[28,29,30,31].map(n=>`<option value="${n}"${n===S.len?' selected':''}>${n} hari</option>`).join('')}</select>
+  <p class="sub" style="margin-top:12px">Jurnal berjalan dari ${fmt(K[0])} sampai ${fmt(K[K.length-1])}. Catatan di tanggal lain tidak hilang; tampil lagi kalau kamu mengatur tanggal kembali ke sana.</p>
+  <button class="big" data-a="next">Lanjut ke bulan berikutnya</button></section>
+  <section><h2>Personalisasi</h2><label for="nm">Nama pemilik jurnal</label><input id="nm" data-f="nm" value="${esc(S.nm||'')}" maxlength="40" placeholder="Namamu"><label>Warna tema</label><div class="sw">${PAL.map((q,i)=>`<button data-a="th" data-v="${i}" class="${(S.th||0)===i?'on':''}" style="background:${q[0]}" aria-label="Tema ${i+1}"></button>`).join('')}</div></section>
+  <section><h2>Cadangan data</h2><p class="sub">Catatan hanya tersimpan di browser ini. Salin cadangan lalu simpan di catatan HP, atau tempel cadangan lama untuk memulihkan.</p><textarea id="bk" rows="4" aria-label="Teks cadangan"></textarea><button class="big" data-a="bk">Tampilkan dan salin cadangan</button><button class="big alt" data-a="rs">Pulihkan dari teks</button><p class="sub" id="bm" role="status"></p></section>`;
+}
+
+const PAL=[['#2F7F73','#5CC4B3','#EC7FA3'],['#6C4FB3','#A68CEB','#B79CF2'],['#C0476A','#E58AA6','#F0809F'],['#B8742A','#E3A55C','#F2B84B']];
+function applyTh(){const q=PAL[S.th||0],dk=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.style.setProperty('--ac',dk?q[1]:q[0])}
+const r1=n=>Math.round(n*10)/10;
+const stage=p=>p===0?'Benih':p<.25?'Tunas':p<.5?'Pohon muda':p<.75?'Berkuncup':p<1?'Mulai mekar':'Mekar penuh';
+const gem=p=>p===0?'·':p<.34?'🌱':p<.67?'🌿':p<1?'🌷':'🌸';
+function fl(x,y,r,c){
+  if(r<6)return `<circle cx="${r1(x)}" cy="${r1(y)}" r="${r1(r*.8)}" fill="${c}"/>`;
+  let o='';
+  for(let k=0;k<5;k++){const a=(k*72-90)*Math.PI/180;o+=`<circle cx="${r1(x+r*.8*Math.cos(a))}" cy="${r1(y+r*.8*Math.sin(a))}" r="${r1(r*.55)}" fill="${c}"/>`}
+  return o+`<circle cx="${r1(x)}" cy="${r1(y)}" r="${r1(r*.3)}" fill="#F2C14E"/>`;
+}
+function lf(x,y,a,s){return `<ellipse cx="${r1(x)}" cy="${r1(y)}" rx="${r1(s)}" ry="${r1(s/2)}" fill="#4FA36A" transform="rotate(${a} ${r1(x)} ${r1(y)})"/>`}
+function tree(p){
+  const fc=PAL[S.th||0][2],h=16+110*p,g=204;
+  let s=`<svg class="tree" viewBox="0 0 300 220" role="img" aria-label="Pohon amalan: ${stage(p)}"><ellipse cx="150" cy="206" rx="${r1(70+30*p)}" ry="9" fill="var(--line)"/>`;
+  if(p===0)return s+'<ellipse cx="150" cy="199" rx="9" ry="6" fill="#9A7656"/><path d="M150 193q-4-8 2-12" stroke="#9A7656" stroke-width="2" fill="none" stroke-linecap="round" opacity=".6"/></svg>';
+  s+=`<path d="M150 ${g} Q147 ${r1(g-h/2)} 150 ${r1(g-h)}" stroke="#9A7656" stroke-width="${r1(3+6*p)}" fill="none" stroke-linecap="round"/>`;
+  [[.35,-1],[.45,1],[.58,-1],[.68,1],[.8,-1],[.9,1]].forEach((b,i)=>{
+    const th=.06+i*.12;if(p<th)return;
+    const q=Math.min(1,(p-th)/.2),y=g-h*b[0],L=(14+36*p)*q,x2=150+b[1]*L,y2=y-L*.55;
+    s+=`<path d="M150 ${r1(y)} Q${r1(150+b[1]*L*.5)} ${r1(y-L*.1)} ${r1(x2)} ${r1(y2)}" stroke="#9A7656" stroke-width="${r1(1.5+2.5*p)}" fill="none" stroke-linecap="round"/>`;
+    for(let j=1;j<=3;j++){const u=j/4,px=150+b[1]*L*u,py=y-L*.55*u;s+=lf(px,py-5*q,b[1]*-35,6*q)+lf(px,py+5*q,b[1]*35,6*q)}
+    if(p>.4)s+=fl(x2,y2,3+Math.min(1,(p-.4)/.5)*9*q,fc);
+  });
+  const ty=g-h;
+  s+=lf(150,ty,-60,7+6*p)+lf(150,ty,60,7+6*p)+lf(150,ty-4,0,6+5*p);
+  if(p>.3)s+=fl(150,ty-8,3+Math.min(1,(p-.3)/.6)*11,fc);
+  if(p>=1)s+=[[70,150],[230,140],[100,110],[205,95],[120,175],[190,172]].map(a=>`<ellipse cx="${a[0]}" cy="${a[1]}" rx="4" ry="2.4" fill="${fc}" opacity=".7" transform="rotate(30 ${a[0]} ${a[1]})"/>`).join('');
+  return s+'</svg>';
+}
+const HS=['Sedang dihafal','Lancar','Perlu diulang'];
+function vHaf(){
+  const L=S.hf||[];
+  return `<section><h2>Pelacak hafalan <small>${L.filter(o=>o.s===1).length} lancar</small></h2>
+  <input id="hn" placeholder="Nama surah atau juz, contoh: Al-Mulk" maxlength="60" aria-label="Nama surah"><button class="big" data-a="ha" style="margin-top:4px">Tambah hafalan</button>
+  ${L.length?'':'<p class="sub" style="margin-top:10px">Belum ada hafalan. Tambahkan surah yang sedang kamu hafal.</p>'}
+  ${L.map((o,i)=>`<div class="hfs"><span>${esc(o.n)}</span><button class="mini s${o.s}" data-a="hs" data-v="${i}">${HS[o.s]}</button><button class="mini" data-a="hx" data-v="${i}" aria-label="Hapus ${esc(o.n)}">Hapus</button></div>`).join('')}</section>`;
+}
+function vEv(){
+  const K=keys(),el=K.filter(k=>k<=today),all=IT.filter(x=>!x[4]);
+  const st=all.map(x=>{let n=0,t=0;el.forEach(k=>{const c=D(k).c||{};if(!uzf(x,k,c)){t++;if(c[x[0]])n++}});return{x:x,n:n,t:t,p:t?n/t:0}}).filter(o=>o.t);
+  const srt=[...st].sort((a,b)=>b.p-a.p);
+  const li=a=>a.map(o=>`<div class="ev"><span>${o.x[2]} ${o.x[1]}</span><b>${o.n} dari ${o.t} hari</b></div>`).join('')||'<p class="sub">Belum ada data. Mulai isi jurnal harianmu dulu.</p>';
+  let best=0,run=0;K.forEach(k=>{const[a,b]=prog(k);if(b&&a===b){run++;best=Math.max(best,run)}else run=0});
+  const tg=S.tg||{},qa=S.qa||{o:0,d:0},hd=K.filter(k=>(D(k).c||{}).hd).length;
+  const q=(f,l)=>`<div class="ev"><span>${l}</span><span><button class="mini" data-a="qa" data-f="${f}" data-v="-1" aria-label="Kurangi">−</button> <b>${qa[f]||0}</b> <button class="mini" data-a="qa" data-f="${f}" data-v="1" aria-label="Tambah">+</button></span></div>`;
+  return `<section><h2>Taman bulan ini</h2><div class="gd">${K.map(k=>{const[a,b]=prog(k);return `<div><span aria-hidden="true">${k>today?'·':gem(b?a/b:0)}</span><small>${fromKey(k).getDate()}</small></div>`}).join('')}</div></section>
+  <section><h2>Paling konsisten</h2>${li(srt.slice(0,3))}</section>
+  <section><h2>Perlu ditingkatkan</h2>${li(srt.slice(-3).reverse())}<p class="sub" style="margin-top:8px">Rangkaian terpanjang hari amalan lengkap: ${best} hari.</p></section>
+  <section><h2>Target pribadi</h2><p class="sub">Isi target berapa hari dalam sebulan untuk tiap amalan.</p>${all.map(x=>{const o=st.find(z=>z.x===x),n=o?o.n:0,t=Number(tg[x[0]])||0;return `<div class="ev"><span>${x[2]} ${x[1]}</span><span>${t&&n>=t?'✓ ':''}${n} dari<input class="tgi" type="number" min="0" max="${S.len}" data-f="tg:${x[0]}" value="${t||''}" aria-label="Target ${x[1]}"></span></div>`}).join('')}</section>
+  <section><h2>Utang puasa Ramadan <small>sisa ${Math.max(0,(qa.o||0)-(qa.d||0))} hari</small></h2>${q('o','Total utang')}${q('d','Sudah diqadha')}<button class="mini" style="margin-top:8px" data-a="hq">Isi total dari ${hd} hari haid bulan ini</button></section>
+  <section><h2>Target bulan depan</h2><textarea data-f="goal" rows="4" placeholder="Amalan apa yang ingin kamu tingkatkan bulan depan?" aria-label="Target bulan depan">${esc(S.goal||'')}</textarea></section>`;
+}
+function render(){applyTh();
+  $('#app').innerHTML=`<header><div class="bis" lang="ar" dir="rtl">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div><h1>Jurnal Yaumiyah ${S.nm?esc(S.nm):'Muslimah'}</h1><p class="sub">Satu bulan, satu langkah kecil setiap hari</p></header>`+({day:vDay,grid:vGrid,hf:vHaf,ev:vEv,set:vSet})[tab]()+'<p class="foot">Catatanmu tersimpan di perangkat ini saja dan tidak dikirim ke mana pun.</p>';
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.v===tab));
+  const st=$('.strip'),on=st&&st.querySelector('.on');
+  if(st&&on)st.scrollLeft=on.offsetLeft-st.clientWidth/2+on.offsetWidth/2;
+}
+function fixCur(){const K=keys();if(!K.includes(cur))cur=K.includes(today)?today:K[0]}
+
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-a]');if(!b)return;
+  const a=b.dataset.a,v=b.dataset.v;
+  if(a==='tab'){tab=v;window.scrollTo(0,0)}
+  else if(a==='go')cur=v;
+  else if(a==='goday'){cur=v;tab='day';window.scrollTo(0,0)}
+  else if(a==='tg'){const d=W(cur);d.c=d.c||{};d.c[b.dataset.k]=!d.c[b.dataset.k]}
+  else if(a==='gc'){const d=W(b.dataset.d);d.c=d.c||{};d.c[b.dataset.k]=!d.c[b.dataset.k]}
+  else if(a==='pr'){try{window.print()}catch(x){}}
+  else if(a==='th'){S.th=Number(v)}
+  else if(a==='ha'){const n=$('#hn').value.trim();if(n){S.hf=S.hf||[];S.hf.push({n:n,s:0})}}
+  else if(a==='hs'){S.hf[v].s=(S.hf[v].s+1)%3}
+  else if(a==='hx'){S.hf.splice(Number(v),1)}
+  else if(a==='qa'){S.qa=S.qa||{o:0,d:0};const f=b.dataset.f;S.qa[f]=Math.max(0,(S.qa[f]||0)+Number(v))}
+  else if(a==='hq'){S.qa=S.qa||{o:0,d:0};S.qa.o=keys().filter(k=>(D(k).c||{}).hd).length}
+  else if(a==='bk'){const t=$('#bk');t.value=JSON.stringify(S);t.select();$('#bm').textContent='Cadangan tampil di kotak. Salin lalu simpan di tempat aman.';try{navigator.clipboard.writeText(t.value).then(()=>{$('#bm').textContent='Cadangan sudah disalin ke clipboard.'},()=>{})}catch(x){}return}
+  else if(a==='rs'){try{const o=JSON.parse($('#bk').value);if(!o||typeof o.days!=='object')throw 0;S=Object.assign({start:today,len:30,days:{}},o);fixCur();save();render();$('#bm').textContent='Cadangan berhasil dipulihkan.'}catch(x){$('#bm').textContent='Teks cadangan tidak valid. Tempel ulang seluruh isinya.'}return}
+  else if(a==='next'){const K=keys(),d=fromKey(K[K.length-1]);d.setDate(d.getDate()+1);S.start=key(d);cur=S.start;tab='day';window.scrollTo(0,0)}
+  save();render();
+});
+document.addEventListener('input',e=>{
+  const f=e.target.dataset.f;if(!f||f==='start'||f==='len')return;
+  if(f.startsWith('t:')){const d=W(cur);d.t=d.t||{};d.t[f.slice(2)]=e.target.value;save()}
+  else if(f.startsWith('tg:')){S.tg=S.tg||{};S.tg[f.slice(3)]=e.target.value;save()}
+  else if(f==='goal'){S.goal=e.target.value;save()}
+  else if(f==='nm'){S.nm=e.target.value;save();$('h1').textContent='Jurnal Yaumiyah '+(e.target.value||'Muslimah')}
+});
+document.addEventListener('change',e=>{
+  const f=e.target.dataset.f,v=e.target.value;
+  if(f==='start'&&v){S.start=v}
+  else if(f==='len'){S.len=Number(v)}
+  else return;
+  fixCur();save();render();
+});
+render();
+</script>
+</body>
+</html>
